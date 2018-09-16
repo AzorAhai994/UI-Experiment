@@ -1,0 +1,372 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+#container {
+  border-radius: 6px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.pic {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 100;
+  height: 35vh;
+  border-radius: 6px 6px 0 0;
+  background: #663399;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.35s all ease;
+}
+
+.pic img {
+  width: 100%;
+  position: relative;
+  top: -88px;
+  /* left: 0; */
+}
+
+.btn1 {
+  height: 60px;
+  width: 60px;
+  background: #09c6ff;
+  border-radius: 140%;
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  cursor: pointer;
+  transition: all 0.35s ease-in;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  z-index: 300;
+}
+
+.btn1.activeBtn {
+  /* opacity: 0;*/
+  transform: rotate(180deg);
+  background: #663399;
+  transition: all 0.35s ease-out;
+}
+
+.btn1:focus {
+  outline: none;
+  opacity: 0;
+}
+
+.outer {
+  transform: scale(0.53);
+  position: relative;
+  cursor: pointer;
+  top: 16px;
+  left: -4px;
+}
+
+.outer::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+}
+
+.outer div {
+  position: absolute;
+  width: 76px;
+  height: 10px;
+  background-color: #fff;
+  transition: all 0.35s ease;
+}
+
+.mid {
+  top: 20px;
+}
+
+.bot {
+  top: 40px;
+}
+
+.outer.active .mid {
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.outer.active .top {
+  transform: rotate(45deg);
+  top: 20px;
+  transition: all 0.35s ease;
+}
+
+.outer.active .bot {
+  transform: rotate(-45deg);
+  top: 20px;
+  transition: all 0.35s ease;
+}
+
+.menu {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: -100vw;
+  /*background: linear-gradient(280deg, rgb(255, 217, 0), rgb(30, 57, 179));*/
+  background: radial-gradient(circle, #eeaeca 0%, rgba(148, 187, 233, 1) 100%);
+  background-size: 600% 600%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  transition: 0.35s all ease-in;
+  border-radius: 0 0 0 0;
+  animation: Gaga 20s ease infinite;
+}
+
+.menu.showmenu {
+  left: 0;
+  transition: 0.35s all ease-out;
+}
+
+.menu ul {
+  padding: 0;
+  display: inline-grid;
+  margin: auto;
+  /*position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);*/
+}
+
+.menu ul li {
+  font-weight: 900;
+  color: #fff;
+  display: block;
+  font-size: 3em;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: 0.35s all ease-out;
+}
+
+.menu ul li:hover {
+  color: #663399;
+  transition: 0.35s all ease-in;
+}
+
+.albums {
+  margin-top: 65%;
+  background-color: white;
+  padding: 1em;
+  height: 65%;
+  display: block;
+}
+
+.component {
+  border-radius: 6px;
+  height: 27%;
+  margin-bottom: 1em;
+  overflow: hidden;
+  opacity: 0.85;
+  position: relative;
+  z-index: 10;
+}
+
+.component::after {
+  content: url(down.svg);
+  font-family: 'FontAwesome';
+  color: white;
+  position: absolute;
+  width: 10px;
+  bottom: -3px;
+  right: 8px;
+  transition: .35s all ease;
+  /*transform: rotate(180deg);*/
+}
+
+.component.rotate::after {
+  transition: .35s all ease;
+  transform: rotate(180deg);
+  bottom: 1px;
+}
+
+.component:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  transition: 0.35s all ease-in;
+}
+
+.component.artpop {
+  background: rgb(255, 55, 173);
+  background: linear-gradient(211deg,
+    rgba(255, 55, 173, 1) 0%,
+    rgba(46, 44, 208, 1) 100%);
+}
+
+.component.bornthisway {
+  background: rgb(156, 156, 156);
+  background: linear-gradient(211deg,
+    rgba(156, 156, 156, 1) 0%,
+    rgba(37, 37, 37, 1) 100%);
+}
+
+.component.monster {
+  background: rgb(70, 70, 70);
+  background: linear-gradient(211deg,
+    rgba(70, 70, 70, 1) 0%,
+    rgba(8, 7, 7, 1) 100%);
+}
+
+.component.fame {
+  background: rgb(108, 192, 237);
+  background: linear-gradient(211deg,
+    rgba(108, 192, 237, 1) 0%,
+    rgba(186, 118, 138, 1) 100%);
+  /*height: 100vh;*/
+}
+
+.component.activated {
+  height: 100vh;
+  transition: .35s all ease-in;
+  margin: 1.5em 0;
+}
+
+.visible {
+  display: none;
+  transition: .35s all ease-in;
+}
+
+.tf--songs {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  height: 50vh;
+  background: #663399;
+  transition: .35s all ease;
+}
+
+.component.c2c {
+  background: rgb(85, 76, 48);
+  background: linear-gradient(211deg,
+    rgba(85, 76, 48, 1) 0%,
+    rgba(122, 82, 62, 1) 100%);
+}
+
+.component.joanne {
+  background: rgb(184, 201, 216);
+  background: linear-gradient(211deg,
+    rgb(158, 206, 248) 0%,
+    rgb(219, 156, 177) 100%);
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.inner {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.comp--img {
+  border-radius: 6px;
+  /* height: 96%; */
+  /* margin-right: 21px; */
+  padding: 0;
+  float: left;
+  width: 34.2%;
+  display: block;
+}
+
+.comp--img img {
+  border-radius: 6px 0 0 6px;
+  width: 100%;
+  height: 100%;
+}
+
+.comp--txt {
+  /* justify-content: center; */
+  display: grid;
+  height: calc(100% - (100% - 100px));
+  color: white;
+  font-size: 1.5em;
+  font-weight: 900;
+  /* float: right; */
+  text-align: center;
+  /* justify-items: center; */
+  align-items: center;
+}
+
+.comp--txt.activatedTxt {
+  height: calc(100% - (100% - 100px));
+}
+
+.comp--txt p {
+  margin: 0;
+}
+
+@keyframes Gaga {
+  0% {
+    background-position: 0% 57%;
+  }
+
+  50% {
+    background-position: 100% 44%;
+  }
+
+  100% {
+    background-position: 0% 57%;
+  }
+}
+
+@media screen and (max-width: 320px) and (orientation: landscape) {
+  #container {
+    width: 100vw;
+    border-radius: 6px;
+  }
+}
+
+@media screen and (min-width: 460px) and (orientation: landscape) {
+  body {
+    display: none;
+  }
+
+  .pic {
+    height: 96%;
+    width: 50%;
+    border-radius: 6px;
+    background: #66339900;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .pic img {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .frame {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+    position: relative;
+  }
+}

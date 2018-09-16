@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:900,400" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#eeaeca">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="artpop.png">
+  <title>UI experiment</title>
+</head>
+
+<body>
+  <div id="container">
+    <div class="frame clearfix">
+      <div class="pic">
+        <img src="normal_001.jpg" alt="">
+      </div>
+      <div id="btn1" class="btn1" onclick="toggleActive()">
+        <div id="outer" class="outer">
+          <div class="top"></div>
+          <div class="mid"></div>
+          <div class="bot"></div>
+        </div>
+      </div>
+
+      <div id="menu" class="menu">
+        <ul>
+          <li>HOME</li>
+          <li>ABOUT</li>
+          <li>BLA</li>
+          <li>BLA2</li>
+        </ul>
+      </div>
+
+      <div class="albums">
+        <div id="fame" class="component fame">
+          <div class="inner clearfix">
+            <div class="comp--img">
+              <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/Lady_Gaga_%E2%80%93_The_Fame_album_cover.png"
+                alt="">
+            </div>
+            <div class="comp--txt">
+              <p>THE FAME</p>
+            </div>
+            <div id="tf--songs" class="tf--songs visible">
+              <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+                <li>I</li>
+                <li>J</li>
+                <li>K</li>
+                <li>L</li>
+                <li>M</li>
+                <li>N</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="monster" class="component monster">
+          <div class="inner clearfix">
+            <div class="comp--img">
+              <img src="https://is4-ssl.mzstatic.com/image/thumb/Music5/v4/43/61/7b/43617bb9-d241-1cf1-87dc-32a5cf7e0928/UMG_cvrart_00602537628261_01_RGB72_1500x1500_09UMGIM40719.jpg/268x0w.jpg"
+                alt="">
+            </div>
+            <div class="comp--txt">
+              <p>THE FAME MONSTER</p>
+            </div>
+          </div>
+        </div>
+        <div class="component bornthisway">
+          <div class="inner clearfix">
+            <div class="comp--img">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/71VJwUwpOzL._SY355_.jpg" alt="">
+            </div>
+            <div class="comp--txt">
+              <p>BORN THIS WAY</p>
+            </div>
+          </div>
+        </div>
+        <div class="component artpop">
+          <div class="inner clearfix">
+            <div class="comp--img">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/61AsGW23xsL.jpg" alt="">
+            </div>
+            <div class="comp--txt">
+              <p>ARTPOP</p>
+            </div>
+          </div>
+        </div>
+        <div class="component joanne">
+          <div class="inner clearfix">
+            <div class="comp--img">
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Lady_Gaga_-_Joanne_%28Official_Album_Cover%29.png/220px-Lady_Gaga_-_Joanne_%28Official_Album_Cover%29.png"
+                alt="">
+            </div>
+            <div class="comp--txt">
+              <p>JOANNE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleActive() {
+      var outer = document.getElementById("outer");
+      outer.classList.toggle("active");
+      var btn1 = document.getElementById("btn1");
+      btn1.classList.toggle("activeBtn");
+      var menu = document.getElementById("menu");
+      menu.classList.toggle("showmenu");
+
+    }
+
+  </script>
+
+
+
+  <script>
+    var fixed = document.getElementById('menu');
+
+    fixed.addEventListener('touchmove', function (e) {
+
+      e.preventDefault();
+
+    }, false);
+
+  </script>
+
+  <script>
+    var comp = document.getElementsByClassName("component");
+    var i;
+    for (i = 0; i < comp.length; i++) {
+      comp[i].addEventListener("click", function () {
+        this.classList.toggle("activated");
+      });
+    }
+
+  </script>
+  <script>
+    var compAr = document.getElementsByClassName("component");
+    var j;
+    for (j = 0; j < compAr.length; j++) {
+      compAr[j].addEventListener("click", function () {
+        this.classList.toggle('rotate');
+      })
+
+    }
+
+  </script>
+  <script>
+    var compTxt = document.getElementsByClassName("comp--txt");
+    var m;
+    for (m = 0; m < comp.length; m++) {
+      compTxt[m].addEventListener("click", function () {
+        this.classList.toggle("activatedTxt");
+      });
+    }
+
+  </script>
+</body>
+
+</html>
